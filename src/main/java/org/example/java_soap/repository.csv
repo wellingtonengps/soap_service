@@ -1,4 +1,4 @@
-name,flag,maps,region,population,currencies
+name,flag,maps,region,subregion,population,currencies,languages,continents,area
 Republic of Cyprus,https://flagcdn.com/w320/cy.png,https://goo.gl/maps/77hPBRdLid8yD5Bm7,Europe,1207361,['Euro']
 State of Eritrea,https://flagcdn.com/w320/er.png,https://goo.gl/maps/HRyqUpnPwwG6jY5j6,Africa,5352000,['Eritrean nakfa']
 Republic of Liberia,https://flagcdn.com/w320/lr.png,https://goo.gl/maps/4VsHsc2oeGeRL3wg6,Africa,5057677,['Liberian dollar']

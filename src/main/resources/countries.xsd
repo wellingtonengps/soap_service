@@ -17,18 +17,44 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="getAllCountriesRequest"/>
+
+    <xs:element name="getAllCountriesResponse">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="countries" type="tns:country" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+
     <xs:complexType name="country">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="flag" type="xs:string"/>
             <xs:element name="maps" type="xs:string"/>
             <xs:element name="region" type="xs:string"/>
+            <xs:element name="subregion" type="xs:string"/>
             <xs:element name="population" type="xs:string"/>
             <xs:element name="currencies" type="tns:currencies"/>
+            <xs:element name="languages" type="tns:languages"/>
+            <xs:element name="continents" type="tns:continents"/>
+            <xs:element name="area" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:simpleType name="currencies">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\w+\s*)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="languages">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\w+\s*)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="continents">
         <xs:restriction base="xs:string">
             <xs:pattern value="(\w+\s*)+"/>
         </xs:restriction>

@@ -5,7 +5,9 @@ import jakarta.annotation.PostConstruct;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.spring.guides.gs_producing_web_service.Country;
@@ -22,9 +24,9 @@ public class CountryRepository {
 
     @PostConstruct
     public void initData() {
-        try (Reader reader = new FileReader("src/main/java/org/example/java_soap/repository.csv")) {
+        try (Reader reader = new FileReader("src/main/java/org/example/java_soap/trabciro.csv")) {
 
-            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("name", "flag", "maps", "region", "population", "currencies").withIgnoreHeaderCase().withTrim());
+            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("name", "flag", "maps", "region", "subregion", "population", "currencies", "languages", "continents", "area").withIgnoreHeaderCase().withTrim());
 
             for (CSVRecord csvRecord : csvParser) {
 
@@ -34,8 +36,12 @@ public class CountryRepository {
                 country.setFlag(csvRecord.get("flag"));
                 country.setMaps(csvRecord.get("maps"));
                 country.setRegion(csvRecord.get("region"));
+                country.setSubregion(csvRecord.get("subregion"));
                 country.setPopulation(csvRecord.get("population"));
                 country.setCurrencies(csvRecord.get("currencies"));
+                country.setLanguages(csvRecord.get("languages"));
+                country.setContinents(csvRecord.get("continents"));
+                country.setArea(csvRecord.get("area"));
 
 
                 countries.put(country.getName(), country);
@@ -48,5 +54,9 @@ public class CountryRepository {
     public Country findCountry(String name) {
         Assert.notNull(name, "The country's name must not be null");
         return countries.get(name);
+    }
+
+    public List<Country> getAllCountries() {
+        return new ArrayList<>(countries.values());
     }
 }
