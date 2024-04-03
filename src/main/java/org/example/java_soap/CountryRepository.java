@@ -49,4 +49,8 @@ public class CountryRepository {
         Assert.notNull(name, "The country's name must not be null");
         return countries.get(name);
     }
+
+    public Map<String, Country> getAllCountries() {
+        return countries;
+    }
 }
