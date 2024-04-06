@@ -9,6 +9,8 @@
         </xs:complexType>
     </xs:element>
 
+
+
     <xs:element name="getCountryResponse">
         <xs:complexType>
             <xs:sequence>
@@ -30,6 +32,8 @@
     <xs:complexType name="country">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
+            <xs:element name="official_name" type="xs:string"/>
+            <xs:element name="capital" type="tns:capital"/>
             <xs:element name="flag" type="xs:string"/>
             <xs:element name="maps" type="xs:string"/>
             <xs:element name="region" type="xs:string"/>
@@ -55,6 +59,12 @@
     </xs:simpleType>
 
     <xs:simpleType name="continents">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\w+\s*)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="capital">
         <xs:restriction base="xs:string">
             <xs:pattern value="(\w+\s*)+"/>
         </xs:restriction>

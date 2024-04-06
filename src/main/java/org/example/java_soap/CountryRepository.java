@@ -24,15 +24,17 @@ public class CountryRepository {
 
     @PostConstruct
     public void initData() {
-        try (Reader reader = new FileReader("src/main/java/org/example/java_soap/trabciro.csv")) {
+        try (Reader reader = new FileReader("src/main/java/org/example/java_soap/repository.csv")) {
 
-            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("name", "flag", "maps", "region", "subregion", "population", "currencies", "languages", "continents", "area").withIgnoreHeaderCase().withTrim());
+            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("official_name", "name", "capital", "flag", "maps", "region", "subregion", "population", "currencies", "languages", "continents", "area").withIgnoreHeaderCase().withTrim());
 
             for (CSVRecord csvRecord : csvParser) {
 
                 Country country = new Country();
 
+                country.setOfficialName(csvRecord.get("official_name"));
                 country.setName(csvRecord.get("name"));
+                country.setCapital(csvRecord.get("capital"));
                 country.setFlag(csvRecord.get("flag"));
                 country.setMaps(csvRecord.get("maps"));
                 country.setRegion(csvRecord.get("region"));

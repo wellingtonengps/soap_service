@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/2c4d14db43.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="fullsize-video-bg">
+    <div id="video-viewport">
+
+        <video autoplay loop muted>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="inner">
+        <div>
+            <h1>Countries of the World</h1>
+            <p>Using JAVA/SOAP</p>
+        </div>
+        <a class="container-arrow scroll-to" href="#countries-container">
+            <span>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </span>
+        </a>
+
+    </div>
+
+</section>
+
+<div id="countries-container"></div>
+
+<div id="country-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-country-details"></div>
+    </div>
+</div>
+
+<footer>
+    <p>Created by Allan Amaral, Vitoria Caetano and Wellington Pereira</p>
+    <p>Paper for Distributed Systems - 2024.1</p>
+</footer>
+<script type="module" src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+</html>
