@@ -99,7 +99,7 @@ Tag name defini o nome do país que será requisitado
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/vqXBbjN/Screenshot-2024-04-06-150157.png)
+![img|320x271](https://i.ibb.co/vqXBbjN/Screenshot-2024-04-06-150157.png)
 
-![App Screenshot2](https://i.ibb.co/Tw9kVdW/Screenshot-2024-04-06-150230.png)
+![img2|320x271](https://i.ibb.co/Tw9kVdW/Screenshot-2024-04-06-150230.png)
 
