@@ -90,7 +90,7 @@ Tag name defini o nome do país que será requisitado
    <soapenv:Header/>
    <soapenv:Body>
       <gs:getCountryRequest>
-         <gs:name>State of Eritrea</gs:name>
+         <gs:name>Brazil</gs:name>
       </gs:getCountryRequest>
    </soapenv:Body>
 </soapenv:Envelope>
